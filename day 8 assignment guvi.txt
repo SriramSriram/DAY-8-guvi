@@ -1,0 +1,96 @@
+1. https://github.com/rvsp/typescript-oops/blob/master/Practice/Movie.md
+class Movie{
+    constructor(title,studio,rating = 'PG'){
+        this.studio = studio;
+        this.rating = rating;
+        this.title= title;
+    }
+    getPG(arr){
+        let temp = arr.filter( x => {
+            if(x.rating == 'PG')
+                return true;
+        });
+        return temp;
+    }
+
+}
+let objMovie = new Movie ("Casino Royale", "Eon Productions", "PG13");
+
+2.https://github.com/rvsp/typescript-oops/blob/master/Practice/class-circle.md
+class Cirlce{
+    constructor(radius=1.0,color="red"){
+        this.radius= radius;
+        this.color= color;
+    }
+    getRadius(){
+        return this.radius;
+    }
+    setRadius(radius){
+        this.radius = radius;
+    }
+    setColor(color){
+        this.color = color;
+    }
+    toString(){
+        return this.toString(this.radius), this.color;
+    }
+    getArea(){
+        let area = 3.14 *this.radius*this.radius
+        return area;
+    }
+    getCircumference(){
+        let c = 2*3.14*this.radius;
+        return c;
+    }
+}
+
+let objCir = new Cirlce();
+
+3.Write a “person” class to hold all the details
+
+class Person{
+    static CompanyName="amazon";
+    constructor(name,age,address) {
+        this.name = name;
+        this.age = age;
+        this.address = address;
+    }
+
+    getDate(){
+        let personData=
+        `
+        Name:${this.name}
+        age:${this.age}
+        address:${this.address}
+        `
+        console.log(personData);
+    }
+
+}
+
+class Employee extends Person{
+    static CompanyName="google";
+    constructor(name,age,address, designation, salary) {
+        super(name,age,address);
+            this.designation=designation;
+            this.salary=salary;
+    }
+
+    getDate(){
+        let employeeData=
+        `
+        Name:${this.name}
+        age:${this.age}
+        address:${this.address}
+        designation:${this.designation}
+        salary:${this.salary}
+        `
+        console.log(employeeData);
+    }
+}
+
+let employee1=new Employee("jack",55,"hyderabad","manger","500000");
+employee1.getDate();
+
+let Person1=new Person("joe",35,"hyderabad");
+Person1.getDate();
